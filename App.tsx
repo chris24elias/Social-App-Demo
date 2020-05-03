@@ -4,6 +4,8 @@ import Navigation from './src/Navigation/Navigation';
 import ReduxStore from './src/Store/ReduxStore';
 import ThemeContext from './src/Theme/index';
 
+console.disableYellowBox = true;
+
 const App = () => {
   return (
     <ReduxStore>
