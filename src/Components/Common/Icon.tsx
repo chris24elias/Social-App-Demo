@@ -22,14 +22,21 @@ interface Props extends IconProps {
     | undefined;
 }
 
-const Icon = ({name, size = 24, type, fill = '#000', ...otherProps}: Props) => {
+const Icon = ({
+  name,
+  size = 24,
+  type,
+  fill = '#000',
+  style,
+  ...otherProps
+}: Props) => {
   if (type) {
     return (
       <VectorIcon
         name={name}
         type={type}
         fontSize={size}
-        style={{fontSize: size, color: fill}}
+        style={[{fontSize: size, color: fill}, style]}
         {...otherProps}
       />
     );
