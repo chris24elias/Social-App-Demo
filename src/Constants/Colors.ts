@@ -10,4 +10,6 @@ export default {
   successGreen: '#00E096',
   primaryBlue: '#3366FF',
   warningYellow: '#FFAA00',
+  primary: '#222f3e',
+  secondary: '#34495e',
 };

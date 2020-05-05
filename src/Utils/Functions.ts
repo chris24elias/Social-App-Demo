@@ -38,3 +38,15 @@ export const displayToast = (options: ToastOptions) => {
     },
   });
 };
+
+export const generateRandomPics = (length) => {
+  return Array.from({length: length}, (v, i) => i).map(() => {
+    let width = randomNumber(200, 300);
+    let height = randomNumber(200, 300); // random number between 200 and 300
+    return {uri: `https://picsum.photos/${width}/${height}`};
+  });
+};
+
+const randomNumber = (min, max) => {
+  return Math.floor(Math.random() * max + min);
+};

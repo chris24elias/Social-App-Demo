@@ -1,0 +1,128 @@
+diff --git a/node_modules/react-native-async-image-animated/lib/AsyncImageAnimated.js b/node_modules/react-native-async-image-animated/lib/AsyncImageAnimated.js
+index 95cd092..2440b57 100644
+--- a/node_modules/react-native-async-image-animated/lib/AsyncImageAnimated.js
++++ b/node_modules/react-native-async-image-animated/lib/AsyncImageAnimated.js
+@@ -19,6 +19,7 @@ class AsyncImageAnimated extends react_1.Component {
+                 react_native_1.Animated.timing(this.state.placeholderColorAnimated, {
+                     duration: 200,
+                     toValue: 0.0,
++                    useNativeDriver: false,
+                 }).start();
+             });
+         };
+@@ -33,11 +34,13 @@ class AsyncImageAnimated extends react_1.Component {
+                             delay,
+                             duration: 200,
+                             toValue: 0,
++                            useNativeDriver: false,
+                         }),
+                         react_native_1.Animated.timing(imageOpacity, {
+                             delay,
+                             duration: 300,
+                             toValue: 1,
++                            useNativeDriver: false,
+                         }),
+                     ]).start(callback);
+                 case 'shrink':
+@@ -47,17 +50,20 @@ class AsyncImageAnimated extends react_1.Component {
+                                 delay,
+                                 duration: 200,
+                                 toValue: 0,
++                                useNativeDriver: false,
+                             }),
+                             react_native_1.Animated.timing(placeholderScale, {
+                                 delay,
+                                 duration: 200,
+                                 toValue: 0,
++                                useNativeDriver: false,
+                             }),
+                         ]),
+                         react_native_1.Animated.timing(imageOpacity, {
+                             delay,
+                             duration: 300,
+                             toValue: 1,
++                            useNativeDriver: false,
+                         }),
+                     ]).start(callback);
+                 default:// explode
+@@ -67,10 +73,12 @@ class AsyncImageAnimated extends react_1.Component {
+                                 delay,
+                                 duration: 100,
+                                 toValue: 0.7,
++                                useNativeDriver: false,
+                             }),
+                             react_native_1.Animated.timing(placeholderOpacity, {
+                                 duration: 100,
+                                 toValue: 0.66,
++                                useNativeDriver: false,
+                             }),
+                         ]),
+                         react_native_1.Animated.parallel([
+@@ -78,16 +86,19 @@ class AsyncImageAnimated extends react_1.Component {
+                                 react_native_1.Animated.timing(placeholderOpacity, {
+                                     duration: 200,
+                                     toValue: 0,
++                                    useNativeDriver: false,
+                                 }),
+                                 react_native_1.Animated.timing(placeholderScale, {
+                                     duration: 200,
+                                     toValue: 1.2,
++                                    useNativeDriver: false,
+                                 }),
+                             ]),
+                             react_native_1.Animated.timing(imageOpacity, {
+                                 delay: 200,
+                                 duration: 300,
+                                 toValue: 1,
++                                useNativeDriver: false,
+                             }),
+                         ]),
+                     ]).start(callback);
+@@ -101,14 +112,16 @@ class AsyncImageAnimated extends react_1.Component {
+                 react_native_1.Animated.timing(placeholderColorAnimated, {
+                     duration: 500,
+                     toValue: 1.0,
++                    useNativeDriver: false,
+                 }),
+                 react_native_1.Animated.timing(placeholderColorAnimated, {
+                     duration: 400,
+                     toValue: 0.0,
++                    useNativeDriver: false,
+                 }),
+             ]).start(this.animatePlaceholderColor);
+         };
+-        const style = typeof props.style === 'number'
++        const style = Array.isArray(props.style)
+             ? react_native_1.StyleSheet.flatten(props.style)
+             : props.style;
+         const { width, height } = style;
+@@ -137,17 +150,17 @@ class AsyncImageAnimated extends react_1.Component {
+         }
+     }
+     render() {
+-        const { imageKey, placeholderColor, placeholderSource, source, style, } = this.props;
++        const { imageKey, placeholderColor, placeholderSource, source, style, resizeMode = "contain" } = this.props;
+         const { failed, imageOpacity, loaded, placeholderColorAnimated, placeholderColorLightened, placeholderOpacity, placeholderScale, } = this.state;
+         return (<react_native_1.View style={style}>
+ 
+         {!failed &&
+-            <react_native_1.Animated.Image key={imageKey} source={source} resizeMode={'contain'} style={[
++            <react_native_1.Animated.Image key={imageKey} source={source} resizeMode={resizeMode} style={[
+                 style,
+                 {
+                     opacity: imageOpacity,
+                     position: 'absolute',
+-                    resizeMode: 'contain',
++                    resizeMode: resizeMode,
+                 },
+             ]} onLoad={this.onLoad} onError={this.onError}/>}
+ 
+@@ -157,7 +170,7 @@ class AsyncImageAnimated extends react_1.Component {
+                 {
+                     opacity: placeholderOpacity,
+                     position: 'absolute',
+-                    resizeMode: 'contain',
++                    resizeMode: resizeMode,
+                 },
+             ]}/>}
+ 

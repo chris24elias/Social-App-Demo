@@ -6,6 +6,7 @@ import {SCREEN_HEIGHT, SCREEN_WIDTH} from '../../../Constants';
 import PostHeader from './PostHeader';
 import {PostInterface} from '../../../Constants/types';
 import PostFooter from './PostFooter';
+import Colors from '../../../Constants/Colors';
 
 interface Props {
   post: PostInterface;
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
     // elevation: 1,
     borderRadius: 19,
     flex: 1,
-    backgroundColor: '#34495e',
+    backgroundColor: Colors.secondary,
   },
   imageContainer: {
     padding: 15,

@@ -14,6 +14,7 @@ import Routes from './Routes';
 import LikesScreen from '../Screens/Likes';
 import SearchScreen from '../Screens/Search';
 import {SCREEN_HEIGHT} from '../Constants';
+import Colors from '../Constants/Colors';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,7 +29,7 @@ const tabs: TabsConfig<BubbleTabConfig> = {
       inactiveColor: 'white', //'rgba(0,0,0,1)',
     },
     background: {
-      activeColor: '#222f3e', //'rgba(223,215,243,1)',
+      activeColor: Colors.primary, //'rgba(223,215,243,1)',
       inactiveColor: 'rgba(223,215,243,0)',
     },
   },
@@ -42,7 +43,7 @@ const tabs: TabsConfig<BubbleTabConfig> = {
       inactiveColor: 'white', //'rgba(0,0,0,1)',
     },
     background: {
-      activeColor: '#222f3e', //'rgba(247,215,243,1)',
+      activeColor: Colors.primary, //'rgba(247,215,243,1)',
       inactiveColor: 'rgba(247,215,243,0)',
     },
   },
@@ -56,7 +57,7 @@ const tabs: TabsConfig<BubbleTabConfig> = {
       inactiveColor: 'white', //'rgba(0,0,0,1)',
     },
     background: {
-      activeColor: '#222f3e', //'rgba(251,239,211,1)',
+      activeColor: Colors.primary, //'rgba(251,239,211,1)',
       inactiveColor: 'rgba(251,239,211,0)',
     },
   },
@@ -70,7 +71,7 @@ const tabs: TabsConfig<BubbleTabConfig> = {
       inactiveColor: 'white', //'rgba(0,0,0,1)',
     },
     background: {
-      activeColor: '#222f3e', //'rgba(207,235,239,1)',
+      activeColor: Colors.primary, //'rgba(207,235,239,1)',
       inactiveColor: 'rgba(207,235,239,0)',
     },
   },
@@ -81,7 +82,10 @@ export default () => {
     <Tab.Navigator
       tabBar={(props) => (
         <AnimatedTabBar
-          style={{height: SCREEN_HEIGHT * 0.11, backgroundColor: '#34495e'}}
+          style={{
+            height: SCREEN_HEIGHT * 0.11,
+            backgroundColor: Colors.secondary,
+          }}
           iconSize={20}
           duration={750}
           tabs={tabs}

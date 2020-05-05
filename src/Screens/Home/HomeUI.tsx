@@ -4,15 +4,19 @@ import {NavigationProp, RouteProp} from '@react-navigation/native';
 import AppHeader from '../../Components/AppHeader';
 import PostsList from './Post/PostList';
 import {PostInterface} from '../../Constants/types';
+import Colors from '../../Constants/Colors';
 
 interface Props {}
 
 const HomeUI = ({}: Props) => {
   return (
-    <Layout style={{flex: 1, backgroundColor: '#222f3e'}}>
+    <Layout style={{flex: 1, backgroundColor: Colors.primary}}>
       <AppHeader
         title="Home"
-        containerStyle={{backgroundColor: '#34495e', borderBottomWidth: 0}}
+        containerStyle={{
+          backgroundColor: Colors.secondary,
+          borderBottomWidth: 0,
+        }}
         titleStyle={{color: 'white'}}
       />
       <PostsList posts={posts} />
