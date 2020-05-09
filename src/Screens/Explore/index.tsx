@@ -63,7 +63,7 @@ const ExploreScreen = ({navigation, route}: Props) => {
           borderRadius: 19,
         }}
         rerender={false}
-        images={[...generateRandomPics(10)]}
+        images={generateRandomPics(10)}
         onRefresh={onRefresh}
         refreshing={refreshing}
         // customImageComponent={Image}

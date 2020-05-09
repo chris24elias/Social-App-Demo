@@ -4,51 +4,7 @@ import {NavigationProp, RouteProp} from '@react-navigation/native';
 import {FlatList} from 'react-native';
 import UserListItem from './UserListItem';
 import {User} from '../../Constants/types';
-
-const MOCK_USERS: User[] = [
-  {
-    profile_picture: 'https://picsum.photos/200',
-    name: 'John Smith',
-    following: false,
-    isFollowingMe: false,
-    online: false,
-  },
-  {
-    profile_picture: 'https://picsum.photos/200',
-    name: 'Jane Smith',
-    following: true,
-    isFollowingMe: true,
-    online: true,
-  },
-  {
-    profile_picture: 'https://picsum.photos/200',
-    name: 'Cathy Griffin',
-    following: false,
-    isFollowingMe: true,
-    online: false,
-  },
-  {
-    profile_picture: 'https://picsum.photos/200',
-    name: 'Robert Downey Jr',
-    following: false,
-    isFollowingMe: true,
-    online: false,
-  },
-  {
-    profile_picture: 'https://picsum.photos/200',
-    name: 'Tony Stark',
-    following: false,
-    isFollowingMe: false,
-    online: true,
-  },
-  {
-    profile_picture: 'https://picsum.photos/200',
-    name: 'Marco Polo',
-    following: false,
-    isFollowingMe: false,
-    online: false,
-  },
-];
+import {MOCK_USERS} from '../../Constants/Mock';
 
 interface Props {}
 
