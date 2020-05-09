@@ -8,3 +8,11 @@ export interface PostInterface {
   timestamp: number;
   comments: string[];
 }
+
+export interface User {
+  profile_picture: string;
+  name: string;
+  following: boolean;
+  isFollowingMe: boolean;
+  online: boolean;
+}
