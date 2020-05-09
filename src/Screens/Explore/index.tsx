@@ -14,7 +14,7 @@ interface Props {
   route: any;
 }
 
-const SearchScreen = ({navigation, route}: Props) => {
+const ExploreScreen = ({navigation, route}: Props) => {
   const [refreshing, setRefreshing] = useState(false);
   const [search, setSearch] = useState('');
 
@@ -28,12 +28,15 @@ const SearchScreen = ({navigation, route}: Props) => {
   return (
     <Layout style={{flex: 1, backgroundColor: Colors.primary}}>
       <AppHeader
-        title="Search"
-        containerStyle={{backgroundColor: Colors.primary, borderBottomWidth: 0}}
+        title="Explore"
+        containerStyle={{
+          backgroundColor: Colors.secondary,
+          borderBottomWidth: 0,
+        }}
         titleStyle={{color: 'white'}}
       />
 
-      <View style={{paddingHorizontal: 5}}>
+      <View style={{paddingHorizontal: 5, marginVertical: 10}}>
         <SearchBar
           placeholder="Search..."
           platform={Platform.OS == 'ios' ? 'ios' : 'android'}
@@ -81,4 +84,4 @@ const SearchScreen = ({navigation, route}: Props) => {
   );
 };
 
-export default SearchScreen;
+export default ExploreScreen;

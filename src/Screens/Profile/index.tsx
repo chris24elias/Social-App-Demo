@@ -66,19 +66,11 @@ const ProfileScreen = ({navigation, route}: Props) => {
         </View>
         <View style={{paddingHorizontal: 15}}>
           <Button
-            style={{
-              borderRadius: 9,
-              marginVertical: 20,
-              backgroundColor: Colors.secondary,
-              borderWidth: 0,
-            }}
+            style={styles.settingsButton}
             activeOpacity={0.5}
             text="Profile Settings"
           />
         </View>
-        {/* <View style={styles.bottomSection}>
-          
-        </View> */}
         <MyPosts />
       </ScrollView>
     </Layout>
@@ -134,5 +126,11 @@ const styles = StyleSheet.create({
     flex: 1,
 
     // paddingTop: 15,
+  },
+  settingsButton: {
+    borderRadius: 9,
+    marginVertical: 20,
+    backgroundColor: Colors.secondary,
+    borderWidth: 0,
   },
 });

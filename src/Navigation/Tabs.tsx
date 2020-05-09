@@ -12,9 +12,10 @@ import LikeSVG from './TabIcons/LikesSVG';
 import SearchSVG from './TabIcons/SearchSVG';
 import Routes from './Routes';
 import LikesScreen from '../Screens/Likes';
-import SearchScreen from '../Screens/Search';
+import ExploreScreen from '../Screens/Explore';
 import {SCREEN_HEIGHT} from '../Constants';
 import Colors from '../Constants/Colors';
+import PeopleSVG from './TabIcons/PeopleSVG';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,20 +34,7 @@ const tabs: TabsConfig<BubbleTabConfig> = {
       inactiveColor: 'rgba(223,215,243,0)',
     },
   },
-  [Routes.LIKES_SCREEN]: {
-    labelStyle: {
-      color: 'white', //'#C9379D',
-    },
-    icon: {
-      component: LikeSVG,
-      activeColor: 'white', //'rgba(201,55,157,1)',
-      inactiveColor: 'white', //'rgba(0,0,0,1)',
-    },
-    background: {
-      activeColor: Colors.primary, //'rgba(247,215,243,1)',
-      inactiveColor: 'rgba(247,215,243,0)',
-    },
-  },
+
   [Routes.SEARCH_SCREEN]: {
     labelStyle: {
       color: 'white', //'#E6A919',
@@ -59,6 +47,20 @@ const tabs: TabsConfig<BubbleTabConfig> = {
     background: {
       activeColor: Colors.primary, //'rgba(251,239,211,1)',
       inactiveColor: 'rgba(251,239,211,0)',
+    },
+  },
+  [Routes.LIKES_SCREEN]: {
+    labelStyle: {
+      color: 'white', //'#C9379D',
+    },
+    icon: {
+      component: PeopleSVG,
+      activeColor: 'white', //'rgba(201,55,157,1)',
+      inactiveColor: 'white', //'rgba(0,0,0,1)',
+    },
+    background: {
+      activeColor: Colors.primary, //'rgba(247,215,243,1)',
+      inactiveColor: 'rgba(247,215,243,0)',
     },
   },
   [Routes.PROFILE_SCREEN]: {
@@ -105,7 +107,7 @@ export default () => {
         //   initialParams={{
         //     backgroundColor: tabs.Search.labelStyle.color,
         //   }}
-        component={SearchScreen}
+        component={ExploreScreen}
       />
       <Tab.Screen
         name={Routes.LIKES_SCREEN}
