@@ -5,6 +5,7 @@ import HomeScreen from '../Screens/Home';
 import {View} from 'react-native';
 import SplashScreen from '../SplashScreen';
 import Tabs from './Tabs';
+import UserScreen from '../Screens/User';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ const Navigation = () => {
       <SplashScreen onLoad={() => fakeApiCallWithoutBadNetwork(1500)} />
       <Stack.Navigator headerMode={'none'}>
         <Stack.Screen name={Routes.HOME_TABS} component={Tabs} />
+        <Stack.Screen name={Routes.USER_SCREEN} component={UserScreen} />
       </Stack.Navigator>
       {/* <Tabs /> */}
     </View>

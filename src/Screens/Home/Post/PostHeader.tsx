@@ -1,21 +1,22 @@
 import React from 'react';
 import {Layout, Text} from '@ui-kitten/components';
 import {NavigationProp, RouteProp} from '@react-navigation/native';
-import {View, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {Icon} from '../../../Components/Common';
 
 interface Props {
   avatar: string;
   username: string;
+  onUserPress: () => void;
 }
 
-const PostHeader = ({avatar, username}: Props) => {
+const PostHeader = ({avatar, username, onUserPress}: Props) => {
   return (
     <View style={styles.header}>
-      <View style={styles.headerLeft}>
+      <TouchableOpacity onPress={() => onUserPress()} style={styles.headerLeft}>
         <Image style={styles.avatar} source={{uri: avatar}} />
         <Text style={styles.username}>{username}</Text>
-      </View>
+      </TouchableOpacity>
       <Icon name="more-horizontal" type="Feather" size={24} fill="white" />
     </View>
   );

@@ -4,6 +4,7 @@ const Routes = {
   PROFILE_SCREEN: 'Profile',
   SEARCH_SCREEN: 'Explore',
   PEOPLE_SCREEN: 'People',
+  USER_SCREEN: 'USER_SCREEN',
 };
 
 export default Routes;

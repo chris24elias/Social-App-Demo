@@ -10,25 +10,22 @@ import Colors from '../../../Constants/Colors';
 
 interface Props {
   post: PostInterface;
+  onUserPress: () => void;
 }
 
 const SIZE = SCREEN_WIDTH;
 
-const Post = ({post}: Props) => {
-  const {
-    avatar,
-    comments,
-    image,
-    likes,
-    username,
-    caption,
-    id,
-    timestamp,
-  } = post;
+const Post = ({post, onUserPress}: Props) => {
+  const {comments, image, likes, caption, id, timestamp, user} = post;
+  const {name, profile_picture} = user;
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
-        <PostHeader {...{avatar, username}} />
+        <PostHeader
+          avatar={profile_picture}
+          username={name}
+          {...{onUserPress}}
+        />
         <View style={styles.imageContainer}>
           <Image source={image} style={styles.image} />
         </View>
