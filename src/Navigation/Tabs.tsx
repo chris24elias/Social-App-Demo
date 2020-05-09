@@ -11,7 +11,7 @@ import ProfileScreen from '../Screens/Profile';
 import LikeSVG from './TabIcons/LikesSVG';
 import SearchSVG from './TabIcons/SearchSVG';
 import Routes from './Routes';
-import LikesScreen from '../Screens/Likes';
+import PeopleScreen from '../Screens/People';
 import ExploreScreen from '../Screens/Explore';
 import {SCREEN_HEIGHT} from '../Constants';
 import Colors from '../Constants/Colors';
@@ -49,7 +49,7 @@ const tabs: TabsConfig<BubbleTabConfig> = {
       inactiveColor: 'rgba(251,239,211,0)',
     },
   },
-  [Routes.LIKES_SCREEN]: {
+  [Routes.PEOPLE_SCREEN]: {
     labelStyle: {
       color: 'white', //'#C9379D',
     },
@@ -110,11 +110,11 @@ export default () => {
         component={ExploreScreen}
       />
       <Tab.Screen
-        name={Routes.LIKES_SCREEN}
+        name={Routes.PEOPLE_SCREEN}
         //   initialParams={{
         //     backgroundColor: tabs.Likes.labelStyle.color,
         //   }}
-        component={LikesScreen}
+        component={PeopleScreen}
       />
       <Tab.Screen
         name={Routes.PROFILE_SCREEN}

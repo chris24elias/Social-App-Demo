@@ -7,7 +7,7 @@ interface Props {
   route: any;
 }
 
-const LikesScreen = ({navigation, route}: Props) => {
+const PeopleScreen = ({navigation, route}: Props) => {
   return (
     <Layout style={{flex: 1}}>
       <Text>LikesScreen</Text>
@@ -15,4 +15,4 @@ const LikesScreen = ({navigation, route}: Props) => {
   );
 };
 
-export default LikesScreen;
+export default PeopleScreen;
