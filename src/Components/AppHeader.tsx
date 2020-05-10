@@ -17,6 +17,7 @@ interface AppHeaderProps {
   titleStyle?: TextStyle;
   leftIconColor?: string;
   showDrawerMenu?: boolean;
+  titleComponent?: any;
 }
 
 const AppHeader = ({
@@ -28,6 +29,7 @@ const AppHeader = ({
   leftIconColor = 'black',
   leftControl,
   showDrawerMenu = false,
+  titleComponent,
 }: AppHeaderProps) => {
   const navigation = useNavigation();
 
@@ -63,6 +65,10 @@ const AppHeader = ({
   };
 
   const renderTitle = () => {
+    if (titleComponent) {
+      return titleComponent;
+    }
+
     return (
       <Text
         style={[

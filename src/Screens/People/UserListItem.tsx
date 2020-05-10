@@ -10,9 +10,10 @@ import {SCREEN_WIDTH} from '../../Constants';
 
 interface Props {
   user: User;
+  onUserPress: () => void;
 }
 
-const UserListItem = ({user}: Props) => {
+const UserListItem = ({user, onUserPress}: Props) => {
   const {following, isFollowingMe, name, profile_picture, online} = user;
 
   const renderRightElement = () => {
@@ -65,6 +66,7 @@ const UserListItem = ({user}: Props) => {
 
   return (
     <ListItem
+      onPress={onUserPress}
       containerStyle={{
         backgroundColor: Colors.primary,
       }}
