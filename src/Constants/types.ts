@@ -14,4 +14,8 @@ export interface User {
   following?: boolean;
   isFollowingMe?: boolean;
   online?: boolean;
+  postsCount: number;
+  followersCount: number;
+  followingCount: number;
+  bio: string;
 }
