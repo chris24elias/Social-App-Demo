@@ -14,7 +14,7 @@ export const MOCK_USERS: User[] = [
   },
   {
     name: 'monicaa',
-    profile_picture: 'https://picsum.photos/200',
+    profile_picture: 'https://picsum.photos/201',
     bio: 'Out on an adventure',
     followersCount: 2432,
     followingCount: 1200,
@@ -24,7 +24,7 @@ export const MOCK_USERS: User[] = [
     online: false,
   },
   {
-    profile_picture: 'https://picsum.photos/200',
+    profile_picture: 'https://picsum.photos/202',
     name: 'John Smith',
     following: false,
     isFollowingMe: false,
@@ -35,7 +35,7 @@ export const MOCK_USERS: User[] = [
     postsCount: 64,
   },
   {
-    profile_picture: 'https://picsum.photos/200',
+    profile_picture: 'https://picsum.photos/203',
     name: 'Jane Smith',
     following: true,
     isFollowingMe: true,
@@ -46,7 +46,7 @@ export const MOCK_USERS: User[] = [
     postsCount: 64,
   },
   {
-    profile_picture: 'https://picsum.photos/200',
+    profile_picture: 'https://picsum.photos/204',
     name: 'Brad Pitt',
     following: false,
     isFollowingMe: true,
@@ -57,7 +57,7 @@ export const MOCK_USERS: User[] = [
     postsCount: 64,
   },
   {
-    profile_picture: 'https://picsum.photos/200',
+    profile_picture: 'https://picsum.photos/205',
     name: 'Robert Downey Jr',
     following: false,
     isFollowingMe: true,
@@ -68,7 +68,7 @@ export const MOCK_USERS: User[] = [
     postsCount: 1000,
   },
   {
-    profile_picture: 'https://picsum.photos/200',
+    profile_picture: 'https://picsum.photos/206',
     name: 'Tony Stark',
     following: false,
     isFollowingMe: false,
@@ -79,7 +79,7 @@ export const MOCK_USERS: User[] = [
     postsCount: 120,
   },
   {
-    profile_picture: 'https://picsum.photos/200',
+    profile_picture: 'https://picsum.photos/207',
     name: 'Marco Polo',
     following: false,
     isFollowingMe: false,
