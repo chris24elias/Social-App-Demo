@@ -1,5 +1,29 @@
 ## Social App
 
+Instagram Clone
+
+I decided to try and make a clone of Instagram in react native with a few twists. This is the result.
+
+### Running the app
+
+```sh
+$ git clone https://https://github.com/chris24elias/Social-App-Demo.git
+
+$ cd Social-App-Demo
+
+$ yarn
+
+ios:
+
+$ cd ios
+$ pod install
+$ yarn ios
+
+android:
+
+$ yarn android
+```
+
 <img src="screenshots/screens.png"
      style="height: 500px" />
 
